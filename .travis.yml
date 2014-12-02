@@ -1,0 +1,14 @@
+language: text
+
+jdk:
+  - oraclejdk8
+
+env:
+  - URL=https://github.com/recruit-tech/redpen/releases/download/v1.0-experimental-1
+
+install:
+  - wget $URL/redpen-cli-1.0-assembled.tar.gz
+  - tar xvf redpen-cli-1.0-assembled.tar.gz
+
+script:                                                                                                                                                                         
+  - redpen-cli-1.0/bin/redpen -c redpen-conf-en.xml -f markdown -r xml sampledoc-en.md
